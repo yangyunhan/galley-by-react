@@ -29,7 +29,7 @@ function get30DegRandom() {
 class ImgFigure extends React.Component {
   /**
    * imgFigure的点击处理函数
-   * @param {*} e 
+   * @param {object} e
    */
   handleClick(e) {
     if (this.props.arrange.isCenter) {
@@ -93,7 +93,7 @@ class ControllerUnit extends React.Component {
     e.stopPropagation();
   }
   render() {
-    var controlelrUnitClassName = "controller-unit";
+    var controlelrUnitClassName = 'controller-unit';
     //如果对应的是居中的图片，显示控制按钮的居中态
     if (this.props.arrange.isCenter) {
       controlelrUnitClassName += ' is-center';
@@ -120,7 +120,7 @@ class AppComponent extends React.Component {
           },
           rotate: 0, //旋转图片
           isInverse: false, //图片正反面
-          isCenter: false, //图片是否居中
+          isCenter: false //图片是否居中
         },
         {
           pos: {
@@ -129,7 +129,7 @@ class AppComponent extends React.Component {
           },
           rotate: 0,
           isInverse: false,
-          isCenter: false,
+          isCenter: false
         },
         {
           pos: {
@@ -138,7 +138,7 @@ class AppComponent extends React.Component {
           },
           rotate: 0,
           isInverse: false,
-          isCenter: false,
+          isCenter: false
         },
         {
           pos: {
@@ -147,7 +147,7 @@ class AppComponent extends React.Component {
           },
           rotate: 0,
           isInverse: false,
-          isCenter: false,
+          isCenter: false
         },
         {
           pos: {
@@ -156,7 +156,7 @@ class AppComponent extends React.Component {
           },
           rotate: 0,
           isInverse: false,
-          isCenter: false,
+          isCenter: false
         },
         {
           pos: {
@@ -165,7 +165,7 @@ class AppComponent extends React.Component {
           },
           rotate: 0,
           isInverse: false,
-          isCenter: false,
+          isCenter: false
         },
         {
           pos: {
@@ -174,7 +174,7 @@ class AppComponent extends React.Component {
           },
           rotate: 0,
           isInverse: false,
-          isCenter: false,
+          isCenter: false
         }
       ]
     }
