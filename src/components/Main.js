@@ -8,7 +8,6 @@ var imageDatas = require('../data/imageDatas.json');
 imageDatas = (function genImageURL(imageDataArr) {
   for (var i = 0, j = imageDataArr.length; i < j; i++) {
     var singleImageData = imageDataArr[i];
-    //singleImageData.imageURL = require('../images/' + singleImageData.filename);
     singleImageData.imageURL = `../images/${singleImageData.filename}`
     imageDataArr[i] = singleImageData;
   }
@@ -37,7 +36,6 @@ class ImgFigure extends React.Component {
     } else {
       this.props.center();
     }
-
     e.stopPropagation();
     e.preventDefault();
   }
@@ -58,7 +56,6 @@ class ImgFigure extends React.Component {
     }
     var imgFigureClassName = 'img-figure';
     imgFigureClassName += this.props.arrange.isInverse ? ' is-inverse' : '';
-
     return <figure
       className={imgFigureClassName}
       style={styleObj}
@@ -180,7 +177,6 @@ class AppComponent extends React.Component {
     }
 
   }
-
   Constant = {
     centerPos: {
       left: 0,
@@ -196,7 +192,6 @@ class AppComponent extends React.Component {
       topY: [0, 0]
     }
   }
-
   /**
    * 翻转图片
    * @param index 输入当前被执行inverse操作的图片对应的图片信息数组的index值
@@ -211,7 +206,6 @@ class AppComponent extends React.Component {
       })
     }.bind(this);
   }
-
   /**
    * 重新布局所有图片
    * @param {*} centerIndex 指定居中排布哪个图片
@@ -227,23 +221,19 @@ class AppComponent extends React.Component {
       hPosRangeY = hPosRange.y,
       vPosRangeTopY = vPosRange.topY,
       vPosRangeX = vPosRange.x,
-
       imgsArrangeTopArr = [],//存储布局在上面的图片
       topImgNum = Math.floor(Math.random() * 2),//取一个或者不取
       topImgSpliceIndex = 0,//标记从哪个索引开始拿放在上面的图片
       imgsArrangeCenterArr = imgsArrangeArr.splice(centerIndex, 1);
-
     //首先居中centerIndex的图片, 居中的centerIndex的图片不需要旋转
     imgsArrangeCenterArr[0] = {
       pos: centerPos,
       rotate: 0,
       isCenter: true
     };
-
     //取出要布局上侧的图片的状态信息
     topImgSpliceIndex = Math.floor(Math.random() * (imgsArrangeArr.length - topImgNum));
     imgsArrangeTopArr = imgsArrangeArr.splice(topImgSpliceIndex, topImgNum);
-
     //布局位于上侧的图片
     imgsArrangeTopArr.forEach(function (value, index) {
       imgsArrangeTopArr[index] = {
@@ -255,7 +245,6 @@ class AppComponent extends React.Component {
         isCenter: false
       }
     });
-
     //布局左右两侧的图片
     for (var i = 0, j = imgsArrangeArr.length, k = j / 2; i < j; i++) {
       var hPosRangeLORX = null;
@@ -282,7 +271,6 @@ class AppComponent extends React.Component {
       imgsArrangeArr: imgsArrangeArr
     });
   }
-
   /**
    * 利用rearrange函数，居中对应index的图片
    * @param index 需要被居中的图片对应的图片信息数组的index值
@@ -304,14 +292,12 @@ class AppComponent extends React.Component {
       stageH = stageDOM.scrollHeight,
       halfStageW = Math.ceil(stageW / 2),
       halfStageH = Math.ceil(stageH / 2);
-
     //拿到一个imageFigure的大小
     var imgFigureDOM = imgfigure[0],
       imgW = imgFigureDOM.scrollWidth,
       imgH = imgFigureDOM.scrollHeight,
       halfImgW = Math.ceil(imgW / 2),
       halfImgH = Math.ceil(imgH / 2);
-
     //计算中心图片的位置点
     this.Constant.centerPos = {
       left: halfStageW - halfImgW,
@@ -329,10 +315,8 @@ class AppComponent extends React.Component {
     this.Constant.vPosRange.topY[1] = halfStageH - halfImgH * 3;
     this.Constant.vPosRange.x[0] = halfStageW - imgW;
     this.Constant.vPosRange.x[1] = halfStageW;
-
     this.rearrange(0);
   }
-
   render() {
     var controllerUnits = [],
       imgFigures = [];
@@ -364,8 +348,6 @@ class AppComponent extends React.Component {
     );
   }
 }
-
 AppComponent.defaultProps = {
 };
-
 export default AppComponent;
