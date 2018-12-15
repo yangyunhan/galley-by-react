@@ -67,8 +67,10 @@
     "json-loader": "^0.5.7",
     "node-sass": "^4.9.3",
     "normalize.css": "^4.0.0",
+    "parsejson": "0.0.3",
     "react": "^15.0.0",
     "react-dom": "^15.0.0",
-    "sass-loader": "^7.1.0"
+    "sass-loader": "^7.1.0",
+    "webpack-uglify-parallel": "^0.1.4"
   }
 }
