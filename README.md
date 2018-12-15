@@ -1,5 +1,4 @@
 # galley-by-react
-Photo galley project
 
 使用：
 1）点击位于展示区域中心位置的图片，即翻转图片显示图片背后的文字。
